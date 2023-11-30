@@ -1,0 +1,94 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    background-color: #f0dde8;
+}
+
+input {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    padding:4px;
+    flex: 1 1 0;
+    padding-top:8px;
+}
+
+label {
+    display:none;
+}
+
+.container {
+    display:flex;
+    margin: 0 auto 0 auto;
+    margin-top: 100px;
+    max-width:850px;
+    background-color: white;
+    border-radius:8px;
+}
+
+.form-container {
+    width: 100%;
+    margin:12px;
+}
+.form-container div {
+    display:flex;
+}
+
+
+.name-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+.name-container div {
+    flex: 110;
+}
+
+.fname {
+    margin-right:24px;
+}
+
+img {
+    width: 340px;
+    height: 615px;
+    object-fit: cover;
+    opacity: .8;
+    border-radius: 8px 0px 0px 8px;
+}
+
+button {
+    margin: 12px;
+    background-color: #db56af;
+    color:white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size:1.25rem;
+    border:none;
+    margin: 30px;
+}
+
+.input-container {
+    position:relative;
+    margin-bottom:12px;
+}
+
+input:focus +label  {
+    display:block;
+    position:absolute;
+    top:-8px;
+    left:8px;
+    font-size:.8em;
+    background-color:green;
+    color:white;
+    padding:2px 8px;
+    border-radius:4px;
+}
+
+input:focus {
+    border: solid 2px green;
+    border-radius: 4px;
+}
+
