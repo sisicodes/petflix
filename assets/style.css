@@ -1,8 +1,21 @@
+
+@font-face {
+    font-family: "logo";
+    src: 
+        url("fonts/dunkin-webfont.woff") format("woff"),
+        url("fonts/dunkin-webfont.woff2") format("woff2");
+    font-weight:normal;
+    font-weight:style
+}
 * {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Geneva, Verdana, sans-serif Geneva, Tahoma, sans-serif;
 }
 body {
     background-color: #f0dde8;
+}
+
+h1 {
+    color:#db166e;
 }
 
 input {
@@ -25,6 +38,8 @@ label {
     max-width:850px;
     background-color: white;
     border-radius:8px;
+    position:relative;
+    min-width:fit-content;
 }
 
 .form-container {
@@ -61,7 +76,7 @@ img {
 
 button {
     margin: 12px;
-    background-color: #db56af;
+    background-color: #ee2d84;
     color:white;
     border-radius: 4px;
     padding: 10px 20px;
@@ -70,25 +85,110 @@ button {
     margin: 30px;
 }
 
-.input-container {
-    position:relative;
-    margin-bottom:12px;
+button:hover {
+    background-color: #dd0063;
 }
 
-input:focus +label  {
+.input-container {
+    position:relative;
+    margin-bottom:36px;
+}
+
+input:focus +label,
+div.error>input +label,
+input:not(:placeholder-shown) + label, 
+input.error +label
+  {
     display:block;
     position:absolute;
-    top:-8px;
+    top:-12px;
     left:8px;
     font-size:.8em;
-    background-color:green;
-    color:white;
-    padding:2px 8px;
+    background-color:white;
+    color:green;
+    padding:1px 8px;
     border-radius:4px;
+    border:none;
 }
+
+input:not(:placeholder-shown):not(:focus):valid + label {
+    color:grey;
+}
+
+input:not(:placeholder-shown):not(:focus):valid {
+    border: solid 1px grey;
+    border-radius: 4px;
+    transition: all .2s ease-in;
+}
+
+input:not(:placeholder-shown):not(:focus):invalid, 
+input.error {
+    border: solid 2px red;
+    border-radius: 4px;
+    transition: all .2s ease-in;
+}
+
+input:not(:placeholder-shown):not(:focus):invalid + label, 
+input.error + label {
+    color:red;
+}
+
 
 input:focus {
     border: solid 2px green;
     border-radius: 4px;
+    transition: all .2s ease-in;
 }
 
+div.errorDes {
+    display:block;
+    position: absolute;
+    font-size: .7em;
+    color:red;
+    left: 2px;
+    bottom: -12px;
+}
+
+input.error{
+    border: solid 2px red;
+}
+
+
+div.error>input +label{
+    background-color:red;
+}
+
+
+.label + .error {
+    color:red;
+}
+
+.container .logo {
+    color:white;
+    position:absolute;
+    left:110px;
+    font:
+        2em "logo", monospace;
+}
+
+.container .credit {
+    position:absolute;
+    bottom:0px;
+    left:50px;
+    color:white;
+    font-weight: 600;
+    font-size:.8em;
+}
+
+a {
+    color: rgb(106, 245, 106);
+    text-decoration: none;
+}
+
+input:focus::placeholder {
+    color:transparent;
+}
+
+input.error::placeholder {
+    color:transparent;
+}

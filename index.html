@@ -5,38 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>petflix</title>
     <link rel="stylesheet" href="assets/style.css">
+    
 </head>
 <body>
     <div class = 'container'>
         <img src="assets/images/cat-on-chair.jpg">
+        <p class = 'credit'>
+            Photo by <a href="https://unsplash.com/@scottwebb?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Scott Webb</a> on <a href="https://unsplash.com/photos/black-and-white-cat-eD853mTbBA0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+        </p>
+        <p class ='logo'>PetFlix.</p>
         <div class = 'form-container'>
             <h1>Getting Started</h1>
-            <form>
+            <form id = 'myform' action = '' method='post'>
                 <div class = 'name-container'>
                     <div class = 'fname input-container'>
-                        <input type="text" id = 'fname' name = 'fname' placeholder="name" />
-                        <label class= 'label' for = 'fname'>name</label>
+                        <input type="text" id = 'fname' name = 'fname' placeholder="*name" maxlength="50" required/>
+                        <label class= 'label' for = 'fname'>*name <span class = 'error' aria-live="polite"></span></label>
+                        <div class = 'errorDes'></div>
+                        
                         
                     </div>
                     <div class = 'lname input-container'>
-                        <input type="text" id = 'lname' name = 'lname' placeholder="surname"/>
+                        <input type="text" id = 'lname' name = 'lname' placeholder="*surname" maxlength="50"/>
                         <label for="lname">surname</label>
+                        <div class = 'errorDes'></div>
                     </div>
 
                 </div>
                 <div class = 'email input-container'>
-                    <input type="email" id = 'email' name = 'email' placeholder="email"/>
-                    <label for="email">email</label>
+                    <input  type="email" id = 'email' name = 'email' placeholder="*email" required/>
+                    <label  for="email">*email</label>
+                    <div class = 'errorDes'></div>
 
                 </div>
                 <div class = 'password input-container'>
-                    <input type="password" id = 'password' name = 'password' placeholder="password"/>
-                    <label for="password">password</label>
+                    <input type="password" id = 'password' name = 'password' placeholder="*password" pattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?])[A-Za-z\d@$!%*?]{6,}$' maxlength="25" minlength="8" required/>
+                    <label for="password">*password</label>
+                    <div class = 'errorDes'></div>
 
                 </div>
                 <div class = 'confirm input-container'>
-                    <input type="password" id = 'confirm' name = 'confirm' placeholder="confirm password" />
-                    <label for="confirm">confirm password</label>
+                    <input type="password" id = 'confirm' name = 'confirm' placeholder="*confirm password"required/>
+                    <label for="confirm">*confirm password <span class = 'error' aria-live="polite"></span></label>
+                    <div class= 'errorDes'></div>
 
                 </div>
                 <div class = 'submit'>
@@ -46,5 +57,6 @@
             </form>
         </div>
     </div>
+    <script src = 'assets/js/script.js'></script>
 </body>
 </html>
