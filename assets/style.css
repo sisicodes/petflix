@@ -1,3 +1,9 @@
+:root {
+
+    --background: #f0dde8;
+    --pink: #db166e;
+}
+
 
 @font-face {
     font-family: "logo";
@@ -11,11 +17,11 @@
     font-family:Geneva, Verdana, sans-serif Geneva, Tahoma, sans-serif;
 }
 body {
-    background-color: #f0dde8;
+    background-color: var(--background);
 }
 
 h1 {
-    color:#db166e;
+    color: var(--pink);
 }
 
 input {
@@ -95,7 +101,6 @@ button:hover {
 }
 
 input:focus +label,
-div.error>input +label,
 input:not(:placeholder-shown) + label, 
 input.error +label
   {
@@ -149,20 +154,6 @@ div.errorDes {
     bottom: -12px;
 }
 
-input.error{
-    border: solid 2px red;
-}
-
-
-div.error>input +label{
-    background-color:red;
-}
-
-
-.label + .error {
-    color:red;
-}
-
 .container .logo {
     color:white;
     position:absolute;
@@ -185,10 +176,7 @@ a {
     text-decoration: none;
 }
 
-input:focus::placeholder {
-    color:transparent;
-}
-
+input:focus::placeholder,
 input.error::placeholder {
     color:transparent;
 }
