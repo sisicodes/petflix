@@ -127,14 +127,14 @@ input:not(:placeholder-shown):not(:focus):valid {
 }
 
 input:not(:placeholder-shown):not(:focus):invalid, 
-input.error {
+input.error:not(:placeholder-shown):not(:focus):valid {
     border: solid 2px red;
     border-radius: 4px;
     transition: all .2s ease-in;
 }
 
 input:not(:placeholder-shown):not(:focus):invalid + label, 
-input.error + label {
+input.error:not(:placeholder-shown):not(:focus):valid + label {
     color:red;
 }
 
